@@ -56,4 +56,6 @@ dependencies {
     implementation "androidx.camera:camera-view:$camerax_version"
     implementation "androidx.camera:camera-core:$camerax_version"
 
+    implementation 'com.google.code.gson:gson:2.8.6'
+
 }

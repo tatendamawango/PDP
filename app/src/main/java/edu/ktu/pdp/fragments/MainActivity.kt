@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        var isWorker = false
+        var isWorker = true
 
         if (isWorker) {
             val navInflater = navController.navInflater

@@ -32,10 +32,11 @@ class Home : Fragment(), HomeTasks.TaskAdapterInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         init()
 
-        taskList.add(Task("Test"))
-        taskList.add(Task("Test"))
+        taskList.add(Task("Test 1"))
+        taskList.add(Task("Test 2"))
 
         binding.floatingActionButton.setOnClickListener {
             val dialogView = LayoutInflater.from(context).inflate(R.layout.add_task_dialog, null)
