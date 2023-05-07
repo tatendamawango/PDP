@@ -29,12 +29,12 @@ class InfoScreens : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         init()
         taskList.add(Task("Info 1",))
-        taskList.add(Task("Info 2",))
-        taskList.add(Task("Info 3",))
-        taskList.add(Task("Info 4",))
-        taskList.add(Task("Info 5",))
-        taskList.add(Task("Info 6",))
-        taskList.add(Task("Info 7",))
+
+        binding.floatingActionButton.setOnClickListener {
+            taskList.add(Task("Info ${taskList.size + 1}"))
+            adapter.notifyDataSetChanged()
+        }
+
     }
 
     private fun init() {

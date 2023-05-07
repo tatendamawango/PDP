@@ -20,6 +20,25 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
+        var isWorker = false
+
+        if (isWorker) {
+            val navInflater = navController.navInflater
+            val graph = navInflater.inflate(R.navigation.nav_graph_worker)
+            navController.graph = graph
+
+            bottomNavigationView.menu.clear()
+            bottomNavigationView.inflateMenu(R.menu.worker_nav)
+        } else {
+            val navInflater = navController.navInflater
+            val graph = navInflater.inflate(R.navigation.nav_graph_manager)
+            navController.graph = graph
+
+            bottomNavigationView.menu.clear()
+            bottomNavigationView.inflateMenu(R.menu.manager_nav)
+        }
+
+
         setupWithNavController(bottomNavigationView, navController)
 
     }

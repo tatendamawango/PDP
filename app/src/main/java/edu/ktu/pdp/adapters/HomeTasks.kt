@@ -1,33 +1,46 @@
 package edu.ktu.pdp.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import edu.ktu.pdp.R
 import edu.ktu.pdp.models.Task
+import edu.ktu.pdp.databinding.EachTaskBinding
 
 class HomeTasks(private val taskList: List<Task>)
-    : RecyclerView.Adapter<HomeTasks.ViewHolder>(){
+    : RecyclerView.Adapter<HomeTasks.TaskViewHolder>(){
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val description: TextView = view.findViewById(R.id.descriptiontv)
+    private  val TAG = "HomeTasks"
+    private var listener:TaskAdapterInterface? = null
+    fun setListener(listener: TaskAdapterInterface){
+        this.listener = listener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.each_task, parent, false)
-        return ViewHolder(itemView)
+    class TaskViewHolder(val binding: EachTaskBinding) : RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
+        val binding = EachTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return TaskViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
         return taskList.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val data = taskList[position]
-        holder.description.text = data.description
+    override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
+        with(holder){
+            with(taskList[position]){
+                binding.descriptiontv.text = this.description
+
+                Log.d(TAG, "onBindViewHolder: $this")
+                binding.deleteBtn.setOnClickListener {
+                    listener?.onDeleteItemClick(this, position)
+                }
+            }
+        }
     }
 
+    interface TaskAdapterInterface{
+        fun onDeleteItemClick(task: Task ,position: Int)
+    }
 }

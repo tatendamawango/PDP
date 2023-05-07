@@ -32,7 +32,7 @@
                 android:layout_height="match_parent"
                 android:elevation="20dp"
                 android:gravity="center"
-                android:text="Code for workers"
+                android:text="Code"
                 android:textColor="@color/black"
                 android:background="@color/white"
                 android:textSize="50dp">
@@ -42,8 +42,9 @@
         <Button
             android:id="@+id/managerRewardButton"
             android:layout_width="214dp"
-            android:layout_height="137dp"
+            android:layout_height="85dp"
             android:text="Generate code"
+            android:elevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.573"
