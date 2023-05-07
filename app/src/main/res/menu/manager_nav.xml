@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"/>
+    <item android:title="Map"
+        android:id="@+id/map"
+        android:icon="@drawable/baseline_map_24"/>
+    <item android:title="Reminder"
+        android:id="@+id/managerReminder"
+        android:icon="@drawable/baseline_chat_24"/>
+    <item android:title="Reward System"
+        android:id="@+id/managerReward"
+        android:icon="@drawable/baseline_stars_24"/>
+    <item android:title="Info screens"
+        android:id="@+id/infoScreens"
+        android:icon="@drawable/baseline_present_to_all_24"/>
+</menu>
