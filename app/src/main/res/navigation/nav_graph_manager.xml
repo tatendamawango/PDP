@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_manager"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="edu.ktu.pdp.fragments.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/map"
+        android:name="edu.ktu.pdp.fragments.Map"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/managerReminder"
+        android:name="edu.ktu.pdp.fragments.ManagerReminder"
+        android:label="fragment_manager_reminder"
+        tools:layout="@layout/fragment_manager_reminder" />
+    <fragment
+        android:id="@+id/managerReward"
+        android:name="edu.ktu.pdp.fragments.ManagerReward"
+        android:label="fragment_manager_reward"
+        tools:layout="@layout/fragment_manager_reward" />
+    <fragment
+        android:id="@+id/infoScreens"
+        android:name="edu.ktu.pdp.fragments.InfoScreens"
+        android:label="fragment_info_screens"
+        tools:layout="@layout/fragment_info_screens" />
+</navigation>
