@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        var isWorker = true
+        var isWorker = randomBoolean()
 
         if (isWorker) {
             val navInflater = navController.navInflater
@@ -37,10 +37,10 @@ class MainActivity : AppCompatActivity() {
             bottomNavigationView.menu.clear()
             bottomNavigationView.inflateMenu(R.menu.manager_nav)
         }
-
-
         setupWithNavController(bottomNavigationView, navController)
-
+    }
+    private fun randomBoolean(): Boolean {
+        return listOf(true, false).random()
     }
 
 }

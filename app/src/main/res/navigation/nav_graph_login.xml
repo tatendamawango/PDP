@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_login"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="edu.ktu.pdp.fragments.Login"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_login_to_nav_graph_manager"
+            app:destination="@id/nav_graph_manager" />
+        <action
+            android:id="@+id/action_login_to_nav_graph"
+            app:destination="@id/nav_graph" />
+    </fragment>
+    <include app:graph="@navigation/nav_graph_manager" />
+    <include app:graph="@navigation/nav_graph_worker" />
+</navigation>

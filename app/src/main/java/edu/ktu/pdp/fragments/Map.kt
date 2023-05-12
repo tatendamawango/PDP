@@ -23,15 +23,26 @@ class Map : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.view.setOnClickListener{
-            val color = binding.view.background
+        binding.c1.setOnClickListener{
+            val color = binding.c1.background
             val isGreen = color.constantState == resources.getDrawable(R.color.green).constantState
             if (isGreen) {
-                binding.view.setBackgroundResource(R.color.red)
+                binding.c1.setBackgroundResource(R.color.red)
             } else {
-                binding.view.setBackgroundResource(R.color.green)
+                binding.c1.setBackgroundResource(R.color.green)
             }
         }
+        binding.c2.setOnClickListener{
+            val color = binding.c2.background
+            val isGreen = color.constantState == resources.getDrawable(R.color.green).constantState
+            if (isGreen) {
+                binding.c2.setBackgroundResource(R.color.red)
+            } else {
+                binding.c2.setBackgroundResource(R.color.green)
+            }
+        }
+
+
     }
 
 }
