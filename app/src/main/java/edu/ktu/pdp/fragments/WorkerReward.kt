@@ -2,11 +2,14 @@ package edu.ktu.pdp.fragments
 
 
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
 import androidx.fragment.app.Fragment
 import edu.ktu.pdp.databinding.FragmentWorkerRewardBinding
 
@@ -28,6 +31,16 @@ class WorkerReward : Fragment() {
 
         binding.captureButton.setOnClickListener {
             binding.workerRewardCode.text?.clear()
+
+            val animation = AlphaAnimation(0.0f, 1.0f)
+            animation.duration = 2000
+            binding.captureButton.startAnimation(animation)
+            binding.captureButton.text = "+1"
+            binding.captureButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f)
+            Handler().postDelayed({
+                binding.captureButton.text = "Confirm"
+                binding.captureButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
+            }, 2000)
         }
 
         binding.workerRewardCode.addTextChangedListener(object : TextWatcher {

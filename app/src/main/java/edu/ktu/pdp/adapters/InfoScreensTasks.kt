@@ -20,6 +20,7 @@ class InfoScreensTasks(private val taskList: List<Task>)
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val description: TextView = view.findViewById(R.id.descriptiontv)
+        private var isSelected: Boolean = false
 
         init {
             view.findViewById<View>(R.id.deleteBtn).setOnClickListener {
@@ -30,6 +31,7 @@ class InfoScreensTasks(private val taskList: List<Task>)
             }
         }
         fun setSelected(isSelected: Boolean) {
+            this.isSelected = isSelected
             if (isSelected) {
                 itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.green))
             } else {
@@ -59,6 +61,17 @@ class InfoScreensTasks(private val taskList: List<Task>)
         val data = taskList[position]
         holder.description.text = data.description
         holder.setSelected(selectedItemPosition == position)
+
+        holder.itemView.setOnClickListener {
+            val previousSelectedItemPosition = selectedItemPosition
+            selectedItemPosition = if (selectedItemPosition == position) {
+                RecyclerView.NO_POSITION
+            } else {
+                position
+            }
+            notifyItemChanged(previousSelectedItemPosition)
+            notifyItemChanged(selectedItemPosition)
+        }
     }
 
     interface TaskAdapterInterface{
