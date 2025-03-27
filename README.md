@@ -59,9 +59,14 @@ EcoSort aims to solve the growing issue of **improper waste management** at cons
 ## 🖼️ Screenshots
 
 ### Manager App View
-![Manager View](./assets/manager_app_view.png)
+![Manager View](./manager_app_view.png)
 
 ### Worker App View
-![Worker View](./assets/worker_app_view.png)
+![Worker View](./worker_app_view.png)
+
+## 🎥 Demo Videos
+
+- 📲 [Manager App Demo – V1.mp4](./v1.mp4)
+- 👷 [Worker App Demo – V2.mp4](./v2.mp4)
 
 
